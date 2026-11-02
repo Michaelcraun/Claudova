@@ -1,0 +1,77 @@
+name: Claudova
+options:
+  bundleIdPrefix: com.mietech
+  deploymentTarget:
+    macOS: "15.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "6.0"
+    MACOSX_DEPLOYMENT_TARGET: "15.0"
+    # ThreeMF (via Nodal/pugixml) is built with C++ interop, so its importers must enable it too.
+    SWIFT_OBJC_INTEROP_MODE: objcxx
+packages:
+  ThreeMF:
+    url: https://github.com/tomasf/ThreeMF
+    from: "0.3.3"
+targets:
+  Claudova:
+    type: application
+    platform: macOS
+    sources:
+      - path: Claudova
+    dependencies:
+      - package: ThreeMF
+    postCompileScripts:
+      # Copy the model workspace template into Resources, skipping SwiftPM/IDE build artifacts
+      # (editors index the template's Package.swift and create .build/ inside it).
+      - name: Copy Workspace Template
+        basedOnDependencyAnalysis: false
+        script: |
+          rsync -a --delete \
+            --exclude '.build' --exclude '.swiftpm' --exclude 'Models' --exclude '.DS_Store' \
+            "${SRCROOT}/WorkspaceTemplate/" \
+            "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WorkspaceTemplate/"
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mietech.Claudova
+        PRODUCT_NAME: Claudova
+        GENERATE_INFOPLIST_FILE: YES
+        INFOPLIST_KEY_CFBundleDisplayName: Claudova
+        INFOPLIST_KEY_LSApplicationCategoryType: public.app-category.developer-tools
+        MARKETING_VERSION: "0.1.0"
+        CURRENT_PROJECT_VERSION: "1"
+        # The app spawns `swift` and `claude` subprocesses, so it must run unsandboxed.
+        ENABLE_APP_SANDBOX: NO
+        ENABLE_HARDENED_RUNTIME: NO
+        # The template copy script writes a whole directory, which script sandboxing would block.
+        ENABLE_USER_SCRIPT_SANDBOXING: NO
+        CODE_SIGN_STYLE: Automatic
+        CODE_SIGN_IDENTITY: "-"
+  ClaudovaTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: ClaudovaTests
+        excludes:
+          - Fixtures
+      - path: ClaudovaTests/Fixtures
+        type: folder
+        buildPhase: resources
+    dependencies:
+      - target: Claudova
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.mietech.ClaudovaTests
+        GENERATE_INFOPLIST_FILE: YES
+        BUNDLE_LOADER: $(TEST_HOST)
+        TEST_HOST: $(BUILT_PRODUCTS_DIR)/Claudova.app/Contents/MacOS/Claudova
+schemes:
+  Claudova:
+    build:
+      targets:
+        Claudova: all
+        ClaudovaTests: [test]
+    test:
+      targets:
+        - ClaudovaTests

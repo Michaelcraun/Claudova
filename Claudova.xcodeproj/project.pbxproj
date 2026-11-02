@@ -1,0 +1,606 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1DA7F1DE5199291321706676 /* ModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9373FFF701F9FD09C89CB610 /* ModelBuilder.swift */; };
+		26610B9D0236277B0F823AB4 /* DesignManagementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B51DBA3D30A73C668F4671A6 /* DesignManagementTests.swift */; };
+		287CA2B9A5974C8A66FE4FC9 /* FileWatcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12FE9ABC2D4F7F9D631CB9AF /* FileWatcher.swift */; };
+		3B66AF8BDC6E0E0DB3FDE779 /* ModelViewerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 033DBF899396D9ABFAC3C769 /* ModelViewerView.swift */; };
+		3C10AF9CD042EAE308B8AD15 /* ModelPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA7DA055315264F03D3A6F5D /* ModelPreview.swift */; };
+		3D3B51BE3C538850C3AFB51C /* WorkspaceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00A674C8497DA727EBB72C65 /* WorkspaceManager.swift */; };
+		4DFC6ED4C4CA3DF6668C61C2 /* ClaudeClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F681B605A8CB37251FFBD38 /* ClaudeClientTests.swift */; };
+		4FEC5E9B535E804AC4FDE4D5 /* ProcessAndBuildTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EADBEF0CD57CDEE00A46CE /* ProcessAndBuildTests.swift */; };
+		5006A10BFB39F0F6D3A077AA /* Workspace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5965CEE46BDA978B4361EEBA /* Workspace.swift */; };
+		5106B67F59249BD703BADF06 /* WorkspaceStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 163B5A48062A41C028A818DC /* WorkspaceStatusView.swift */; };
+		5C4EADE2E878F3CE6D42B986 /* ViewerScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F493A087917AC67D0F6C448 /* ViewerScene.swift */; };
+		6F5D1961A8C251D890F10050 /* Fixtures in Resources */ = {isa = PBXBuildFile; fileRef = 8C2270EECBDA7FE5479B4CBC /* Fixtures */; };
+		7D79C75CA86A557656643C37 /* ChatItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9769C415BD3A952DFF7ACB97 /* ChatItem.swift */; };
+		8F3723F2E5895B585B38EBE0 /* ShellEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6549D9EFF2E3472B2DE3B002 /* ShellEnvironment.swift */; };
+		8FEF280E4C57554272CDC39E /* ClaudeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAAB4F522FE2D0697A2A96B /* ClaudeClient.swift */; };
+		91047EECC4968BDB16C38859 /* ClaudovaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D18BFFB87915655D7A6491C /* ClaudovaApp.swift */; };
+		91FE3F44DE21A2E33428A7A5 /* WorkspaceManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36C210A6036E882A0108431C /* WorkspaceManagerTests.swift */; };
+		A76DA1C6718F0EA4A9643B17 /* TestDoubles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C4F3EE1CA523E6D50B59BCD /* TestDoubles.swift */; };
+		ABEB2B76C156426F064D3D87 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5BF2A00CDDC3F6CA4BD308 /* ContentView.swift */; };
+		AFFAEB52E2AA85E78A164B1B /* ChatStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B44D7412CEE49EDB07A2EDD /* ChatStore.swift */; };
+		B2CE85479366CB6ED1081E11 /* ThreeMF in Frameworks */ = {isa = PBXBuildFile; productRef = 4DEE32FE1781F45C223E6812 /* ThreeMF */; };
+		B4C05FEB00E312C5E15A699C /* ChatStoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0680321EFDB8BC068BC64E9 /* ChatStoreTests.swift */; };
+		C74F26113ABBF18DD74EB50A /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C09BFAF63E2D1026EEF9AEF /* AppModel.swift */; };
+		D8A05A6008E58ED1E8DB6FAD /* ThreeMFMeshLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33097294B1CEBD6EB47C629 /* ThreeMFMeshLoader.swift */; };
+		DAE74C7D1CB758F4AECB4D0A /* BuildLoopTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 199356FE47492983FBC99226 /* BuildLoopTests.swift */; };
+		DD77BF3CE9A64C24B7320A32 /* DesignListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5CE1A5E4F434BF24D400B6F /* DesignListView.swift */; };
+		E40F40F8D1374E3510F687C7 /* ClaudeEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 290223519F43925E6A9AA1B3 /* ClaudeEvent.swift */; };
+		E71F83FDDD556752E83F8BC6 /* ThreeMFMeshLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF9239292E16966E7DD2D7 /* ThreeMFMeshLoaderTests.swift */; };
+		E9E7BA0A2DEC4F445FEFE3CB /* ProcessRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F787DFBBE16316DE649D3AF /* ProcessRunner.swift */; };
+		EE980DD57FEE8E2309036738 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9973577082BEDDE21991F8E8 /* ChatView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		16283F81363F9356667C3B44 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A78AAC79AAE880619B31DA5F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2B7BEF96AD2BB74FBD8D801D;
+			remoteInfo = Claudova;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		00A674C8497DA727EBB72C65 /* WorkspaceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManager.swift; sourceTree = "<group>"; };
+		033DBF899396D9ABFAC3C769 /* ModelViewerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelViewerView.swift; sourceTree = "<group>"; };
+		12FE9ABC2D4F7F9D631CB9AF /* FileWatcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileWatcher.swift; sourceTree = "<group>"; };
+		163B5A48062A41C028A818DC /* WorkspaceStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceStatusView.swift; sourceTree = "<group>"; };
+		199356FE47492983FBC99226 /* BuildLoopTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildLoopTests.swift; sourceTree = "<group>"; };
+		1B44D7412CEE49EDB07A2EDD /* ChatStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStore.swift; sourceTree = "<group>"; };
+		1C09BFAF63E2D1026EEF9AEF /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		290223519F43925E6A9AA1B3 /* ClaudeEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeEvent.swift; sourceTree = "<group>"; };
+		36C210A6036E882A0108431C /* WorkspaceManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkspaceManagerTests.swift; sourceTree = "<group>"; };
+		3F493A087917AC67D0F6C448 /* ViewerScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewerScene.swift; sourceTree = "<group>"; };
+		4C4F3EE1CA523E6D50B59BCD /* TestDoubles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestDoubles.swift; sourceTree = "<group>"; };
+		5630DD4DC17F31271CB15173 /* ClaudovaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ClaudovaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5965CEE46BDA978B4361EEBA /* Workspace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Workspace.swift; sourceTree = "<group>"; };
+		5F787DFBBE16316DE649D3AF /* ProcessRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessRunner.swift; sourceTree = "<group>"; };
+		6549D9EFF2E3472B2DE3B002 /* ShellEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShellEnvironment.swift; sourceTree = "<group>"; };
+		7CAAB4F522FE2D0697A2A96B /* ClaudeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeClient.swift; sourceTree = "<group>"; };
+		7F681B605A8CB37251FFBD38 /* ClaudeClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudeClientTests.swift; sourceTree = "<group>"; };
+		8C2270EECBDA7FE5479B4CBC /* Fixtures */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Fixtures; path = ClaudovaTests/Fixtures; sourceTree = SOURCE_ROOT; };
+		9373FFF701F9FD09C89CB610 /* ModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelBuilder.swift; sourceTree = "<group>"; };
+		94EADBEF0CD57CDEE00A46CE /* ProcessAndBuildTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProcessAndBuildTests.swift; sourceTree = "<group>"; };
+		9769C415BD3A952DFF7ACB97 /* ChatItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatItem.swift; sourceTree = "<group>"; };
+		9973577082BEDDE21991F8E8 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		9D18BFFB87915655D7A6491C /* ClaudovaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaudovaApp.swift; sourceTree = "<group>"; };
+		A0680321EFDB8BC068BC64E9 /* ChatStoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatStoreTests.swift; sourceTree = "<group>"; };
+		AA5BF2A00CDDC3F6CA4BD308 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B272C8DD44C0FBE0B436D288 /* Claudova.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Claudova.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4AF9239292E16966E7DD2D7 /* ThreeMFMeshLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMFMeshLoaderTests.swift; sourceTree = "<group>"; };
+		B51DBA3D30A73C668F4671A6 /* DesignManagementTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignManagementTests.swift; sourceTree = "<group>"; };
+		CA7DA055315264F03D3A6F5D /* ModelPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelPreview.swift; sourceTree = "<group>"; };
+		E5CE1A5E4F434BF24D400B6F /* DesignListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignListView.swift; sourceTree = "<group>"; };
+		F33097294B1CEBD6EB47C629 /* ThreeMFMeshLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThreeMFMeshLoader.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E5A6B016E743C120B1055B38 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B2CE85479366CB6ED1081E11 /* ThreeMF in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		03EF125A8F21415AE9F86AE3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1C09BFAF63E2D1026EEF9AEF /* AppModel.swift */,
+				9769C415BD3A952DFF7ACB97 /* ChatItem.swift */,
+				1B44D7412CEE49EDB07A2EDD /* ChatStore.swift */,
+				CA7DA055315264F03D3A6F5D /* ModelPreview.swift */,
+				3F493A087917AC67D0F6C448 /* ViewerScene.swift */,
+				5965CEE46BDA978B4361EEBA /* Workspace.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		2A0AE645AB7550C3FCA71F8A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B272C8DD44C0FBE0B436D288 /* Claudova.app */,
+				5630DD4DC17F31271CB15173 /* ClaudovaTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		5476EC6B7059F17312F1094F /* ClaudovaTests */ = {
+			isa = PBXGroup;
+			children = (
+				199356FE47492983FBC99226 /* BuildLoopTests.swift */,
+				A0680321EFDB8BC068BC64E9 /* ChatStoreTests.swift */,
+				7F681B605A8CB37251FFBD38 /* ClaudeClientTests.swift */,
+				B51DBA3D30A73C668F4671A6 /* DesignManagementTests.swift */,
+				8C2270EECBDA7FE5479B4CBC /* Fixtures */,
+				94EADBEF0CD57CDEE00A46CE /* ProcessAndBuildTests.swift */,
+				4C4F3EE1CA523E6D50B59BCD /* TestDoubles.swift */,
+				B4AF9239292E16966E7DD2D7 /* ThreeMFMeshLoaderTests.swift */,
+				36C210A6036E882A0108431C /* WorkspaceManagerTests.swift */,
+			);
+			path = ClaudovaTests;
+			sourceTree = "<group>";
+		};
+		5C3D270DC2F38F6DA678461E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7CAAB4F522FE2D0697A2A96B /* ClaudeClient.swift */,
+				290223519F43925E6A9AA1B3 /* ClaudeEvent.swift */,
+				12FE9ABC2D4F7F9D631CB9AF /* FileWatcher.swift */,
+				9373FFF701F9FD09C89CB610 /* ModelBuilder.swift */,
+				5F787DFBBE16316DE649D3AF /* ProcessRunner.swift */,
+				6549D9EFF2E3472B2DE3B002 /* ShellEnvironment.swift */,
+				F33097294B1CEBD6EB47C629 /* ThreeMFMeshLoader.swift */,
+				00A674C8497DA727EBB72C65 /* WorkspaceManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		6537EB6DC6C1C2BFAFA10FA2 /* Claudova */ = {
+			isa = PBXGroup;
+			children = (
+				9D18BFFB87915655D7A6491C /* ClaudovaApp.swift */,
+				03EF125A8F21415AE9F86AE3 /* Models */,
+				5C3D270DC2F38F6DA678461E /* Services */,
+				BFA017674A72327324D3DE89 /* Views */,
+			);
+			path = Claudova;
+			sourceTree = "<group>";
+		};
+		B78ABBB6A5E4EE661CB3AFF9 = {
+			isa = PBXGroup;
+			children = (
+				6537EB6DC6C1C2BFAFA10FA2 /* Claudova */,
+				5476EC6B7059F17312F1094F /* ClaudovaTests */,
+				2A0AE645AB7550C3FCA71F8A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		BFA017674A72327324D3DE89 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9973577082BEDDE21991F8E8 /* ChatView.swift */,
+				AA5BF2A00CDDC3F6CA4BD308 /* ContentView.swift */,
+				E5CE1A5E4F434BF24D400B6F /* DesignListView.swift */,
+				033DBF899396D9ABFAC3C769 /* ModelViewerView.swift */,
+				163B5A48062A41C028A818DC /* WorkspaceStatusView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2B7BEF96AD2BB74FBD8D801D /* Claudova */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7C91A70A92A4A28B497C3AE /* Build configuration list for PBXNativeTarget "Claudova" */;
+			buildPhases = (
+				80EEA9353D15E9E805D9766A /* Sources */,
+				FA4932530004460E9FD087D2 /* Copy Workspace Template */,
+				E5A6B016E743C120B1055B38 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Claudova;
+			packageProductDependencies = (
+				4DEE32FE1781F45C223E6812 /* ThreeMF */,
+			);
+			productName = Claudova;
+			productReference = B272C8DD44C0FBE0B436D288 /* Claudova.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E852DFD298D9B4B74A374222 /* ClaudovaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E42ED00607DF1CF752095E98 /* Build configuration list for PBXNativeTarget "ClaudovaTests" */;
+			buildPhases = (
+				2EA9FF053E5D71C96F15C5DE /* Sources */,
+				168D3A5ECD27CC0DE2C38699 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				98936EA8988FEB7C9A6419A2 /* PBXTargetDependency */,
+			);
+			name = ClaudovaTests;
+			packageProductDependencies = (
+			);
+			productName = ClaudovaTests;
+			productReference = 5630DD4DC17F31271CB15173 /* ClaudovaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A78AAC79AAE880619B31DA5F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					2B7BEF96AD2BB74FBD8D801D = {
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 3D2F16EC8DFE76B3AFEAE390 /* Build configuration list for PBXProject "Claudova" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = B78ABBB6A5E4EE661CB3AFF9;
+			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				E5E800EEC58935CB2EA25CEB /* XCRemoteSwiftPackageReference "ThreeMF" */,
+			);
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 2A0AE645AB7550C3FCA71F8A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2B7BEF96AD2BB74FBD8D801D /* Claudova */,
+				E852DFD298D9B4B74A374222 /* ClaudovaTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		168D3A5ECD27CC0DE2C38699 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6F5D1961A8C251D890F10050 /* Fixtures in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FA4932530004460E9FD087D2 /* Copy Workspace Template */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Workspace Template";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "rsync -a --delete \\\n  --exclude '.build' --exclude '.swiftpm' --exclude 'Models' --exclude '.DS_Store' \\\n  \"${SRCROOT}/WorkspaceTemplate/\" \\\n  \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WorkspaceTemplate/\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2EA9FF053E5D71C96F15C5DE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DAE74C7D1CB758F4AECB4D0A /* BuildLoopTests.swift in Sources */,
+				B4C05FEB00E312C5E15A699C /* ChatStoreTests.swift in Sources */,
+				4DFC6ED4C4CA3DF6668C61C2 /* ClaudeClientTests.swift in Sources */,
+				26610B9D0236277B0F823AB4 /* DesignManagementTests.swift in Sources */,
+				4FEC5E9B535E804AC4FDE4D5 /* ProcessAndBuildTests.swift in Sources */,
+				A76DA1C6718F0EA4A9643B17 /* TestDoubles.swift in Sources */,
+				E71F83FDDD556752E83F8BC6 /* ThreeMFMeshLoaderTests.swift in Sources */,
+				91FE3F44DE21A2E33428A7A5 /* WorkspaceManagerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		80EEA9353D15E9E805D9766A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C74F26113ABBF18DD74EB50A /* AppModel.swift in Sources */,
+				7D79C75CA86A557656643C37 /* ChatItem.swift in Sources */,
+				AFFAEB52E2AA85E78A164B1B /* ChatStore.swift in Sources */,
+				EE980DD57FEE8E2309036738 /* ChatView.swift in Sources */,
+				8FEF280E4C57554272CDC39E /* ClaudeClient.swift in Sources */,
+				E40F40F8D1374E3510F687C7 /* ClaudeEvent.swift in Sources */,
+				91047EECC4968BDB16C38859 /* ClaudovaApp.swift in Sources */,
+				ABEB2B76C156426F064D3D87 /* ContentView.swift in Sources */,
+				DD77BF3CE9A64C24B7320A32 /* DesignListView.swift in Sources */,
+				287CA2B9A5974C8A66FE4FC9 /* FileWatcher.swift in Sources */,
+				1DA7F1DE5199291321706676 /* ModelBuilder.swift in Sources */,
+				3C10AF9CD042EAE308B8AD15 /* ModelPreview.swift in Sources */,
+				3B66AF8BDC6E0E0DB3FDE779 /* ModelViewerView.swift in Sources */,
+				E9E7BA0A2DEC4F445FEFE3CB /* ProcessRunner.swift in Sources */,
+				8F3723F2E5895B585B38EBE0 /* ShellEnvironment.swift in Sources */,
+				D8A05A6008E58ED1E8DB6FAD /* ThreeMFMeshLoader.swift in Sources */,
+				5C4EADE2E878F3CE6D42B986 /* ViewerScene.swift in Sources */,
+				5006A10BFB39F0F6D3A077AA /* Workspace.swift in Sources */,
+				3D3B51BE3C538850C3AFB51C /* WorkspaceManager.swift in Sources */,
+				5106B67F59249BD703BADF06 /* WorkspaceStatusView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		98936EA8988FEB7C9A6419A2 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2B7BEF96AD2BB74FBD8D801D /* Claudova */;
+			targetProxy = 16283F81363F9356667C3B44 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		27191656CC2B6886976DBFD9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mietech.ClaudovaTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Claudova.app/Contents/MacOS/Claudova";
+			};
+			name = Debug;
+		};
+		3986891B01D25EEF158C21AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Debug;
+		};
+		9C53CCF1804428B5EB907D7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 15.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OBJC_INTEROP_MODE = objcxx;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 6.0;
+			};
+			name = Release;
+		};
+		D673AFAF22DB7DAC57F0E761 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.mietech.ClaudovaTests;
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Claudova.app/Contents/MacOS/Claudova";
+			};
+			name = Release;
+		};
+		DA391501E95788608264F533 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Claudova;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mietech.Claudova;
+				PRODUCT_NAME = Claudova;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		FDA0CB98D7951DDC84566B64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_APP_SANDBOX = NO;
+				ENABLE_HARDENED_RUNTIME = NO;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Claudova;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mietech.Claudova;
+				PRODUCT_NAME = Claudova;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3D2F16EC8DFE76B3AFEAE390 /* Build configuration list for PBXProject "Claudova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3986891B01D25EEF158C21AF /* Debug */,
+				9C53CCF1804428B5EB907D7B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		C7C91A70A92A4A28B497C3AE /* Build configuration list for PBXNativeTarget "Claudova" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA391501E95788608264F533 /* Debug */,
+				FDA0CB98D7951DDC84566B64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		E42ED00607DF1CF752095E98 /* Build configuration list for PBXNativeTarget "ClaudovaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				27191656CC2B6886976DBFD9 /* Debug */,
+				D673AFAF22DB7DAC57F0E761 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E5E800EEC58935CB2EA25CEB /* XCRemoteSwiftPackageReference "ThreeMF" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/tomasf/ThreeMF";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.3.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4DEE32FE1781F45C223E6812 /* ThreeMF */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E5E800EEC58935CB2EA25CEB /* XCRemoteSwiftPackageReference "ThreeMF" */;
+			productName = ThreeMF;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = A78AAC79AAE880619B31DA5F /* Project object */;
+}

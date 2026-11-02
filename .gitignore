@@ -1,0 +1,24 @@
+# macOS
+.DS_Store
+
+# Xcode / SwiftPM
+xcuserdata/
+DerivedData/
+/.build
+/Packages
+.swiftpm/configuration/registries.json
+.swiftpm/xcode/package.xcworkspace/contents.xcworkspacedata
+.netrc
+
+# Workspace template: build products and generated models
+WorkspaceTemplate/.build/
+WorkspaceTemplate/.swiftpm/
+WorkspaceTemplate/Models/
+
+# Generated 3D models, wherever they end up (test fixtures are the exception)
+*.3mf
+*.stl
+*.obj
+*.step
+*.stp
+!ClaudovaTests/Fixtures/*.3mf
