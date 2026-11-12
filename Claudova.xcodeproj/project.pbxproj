@@ -288,7 +288,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rsync -a --delete \\\n  --exclude '.build' --exclude '.swiftpm' --exclude 'Models' --exclude '.DS_Store' \\\n  \"${SRCROOT}/WorkspaceTemplate/\" \\\n  \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WorkspaceTemplate/\"\n";
+			shellScript = "rsync -a --delete \\\n  --exclude '.build' --exclude '.swiftpm' --exclude 'Models' --exclude 'Renders' --exclude '.DS_Store' \\\n  \"${SRCROOT}/WorkspaceTemplate/\" \\\n  \"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WorkspaceTemplate/\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 

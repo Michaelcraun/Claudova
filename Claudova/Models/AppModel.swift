@@ -92,6 +92,7 @@ final class AppModel {
     func open(_ workspace: Workspace) async {
         guard let manager else { return }
         let opened = (try? manager.markOpened(workspace)) ?? workspace
+        manager.refreshAppOwnedFiles(in: opened)
         self.workspace = opened
         chat.open(opened, transcript: manager.loadTranscript(for: opened))
         refreshDesigns()

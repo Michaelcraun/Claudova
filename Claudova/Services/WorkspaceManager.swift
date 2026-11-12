@@ -20,13 +20,23 @@ struct WorkspaceManager: Sendable {
     let templateURL: URL
 
     /// Template entries that are never copied: build products and editor state.
-    static let excludedTemplateEntries: Set<String> = [".build", ".swiftpm", "Models", ".DS_Store"]
+    static let excludedTemplateEntries: Set<String> = [".build", ".swiftpm", "Models", "Renders", ".DS_Store"]
 
     /// `~/Library/Application Support/Claudova/Projects`, using the template bundled in the app.
     static func makeDefault(bundle: Bundle = .main) throws -> WorkspaceManager {
         guard let template = bundle.url(forResource: "WorkspaceTemplate", withExtension: nil) else {
             throw WorkspaceError.templateMissing
         }
+        #if DEBUG
+        // Keeps scripted test runs away from the user's real designs:
+        //   open Claudova.app --args -ClaudovaProjectsDirectory /path/to/scratch
+        if let override = UserDefaults.standard.string(forKey: "ClaudovaProjectsDirectory") {
+            return WorkspaceManager(
+                projectsDirectory: URL(filePath: override, directoryHint: .isDirectory),
+                templateURL: template
+            )
+        }
+        #endif
         let support = try FileManager.default.url(
             for: .applicationSupportDirectory, in: .userDomainMask, appropriateFor: nil, create: true
         )
@@ -167,6 +177,23 @@ struct WorkspaceManager: Sendable {
     }
 
     // MARK: - Cadova skill
+
+    /// Files the app owns in every workspace. They're refreshed from the template whenever a
+    /// design opens, so designs made by older app versions get updated instructions.
+    static let appOwnedTemplateFiles = ["CLAUDE.md", ".gitignore"]
+
+    /// Copies `appOwnedTemplateFiles` from the template where the workspace's copy differs.
+    /// Returns the files it rewrote.
+    @discardableResult
+    func refreshAppOwnedFiles(in workspace: Workspace) -> [String] {
+        let fm = FileManager.default
+        return Self.appOwnedTemplateFiles.filter { name in
+            guard let fresh = fm.contents(atPath: templateURL.appending(path: name).path) else { return false }
+            let destination = workspace.url.appending(path: name)
+            guard fm.contents(atPath: destination.path) != fresh else { return false }
+            return (try? fresh.write(to: destination, options: .atomic)) != nil
+        }
+    }
 
     /// Replaces the workspace's vendored Cadova skill with the one shipped in the resolved
     /// Cadova checkout, so the guidance matches the Cadova version actually in use.

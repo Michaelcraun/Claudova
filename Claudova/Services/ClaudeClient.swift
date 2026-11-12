@@ -36,8 +36,15 @@ struct ClaudeClient: Sendable {
     static let allowedCommands = [
         "swift build", "swift run", "swift test", "swift package resolve",
         "ls", "cat", "head", "tail", "wc", "grep", "rg", "test", "mkdir",
-        "\"/Applications/Cadova Viewer.app/Contents/Helpers/cadova-viewer\"",
+        "\"\(cadovaViewerPath)\"",
     ]
+
+    /// The headless renderer bundled with Cadova Viewer 1.3.2+ (https://github.com/tomasf/CadovaViewer).
+    static let cadovaViewerPath = "/Applications/Cadova Viewer.app/Contents/Helpers/cadova-viewer"
+
+    static var isCadovaViewerInstalled: Bool {
+        FileManager.default.isExecutableFile(atPath: cadovaViewerPath)
+    }
 
     /// Tool uses that run without asking. With `--permission-mode dontAsk`, everything else is
     /// denied, and Claude is told so. These are passed on the command line because the workspace's
@@ -114,11 +121,11 @@ struct ClaudeClient: Sendable {
 extension ClaudeClient {
     /// Context appended to Claude Code's system prompt: the permission rules, the workspace's
     /// CLAUDE.md, and the Cadova skill (kept in the workspace, refreshed from the Cadova checkout).
-    static func systemPrompt(forWorkspaceAt url: URL) -> String {
+    static func systemPrompt(forWorkspaceAt url: URL, viewerInstalled: Bool = isCadovaViewerInstalled) -> String {
         func read(_ path: String) -> String? {
             try? String(contentsOf: url.appending(path: path), encoding: .utf8)
         }
-        var sections = [permissionsSection]
+        var sections = [permissionsSection, viewerSection(installed: viewerInstalled)]
         if let instructions = read("CLAUDE.md") {
             sections.append(instructions)
         }
@@ -144,6 +151,27 @@ extension ClaudeClient {
         command is denied, use an allowed alternative rather than concluding that commands can't run.
         `swift run` (to build the model) is always allowed.
         """
+    }
+
+    /// Tells Claude up front whether it can render, so it doesn't spend a call probing for it.
+    static func viewerSection(installed: Bool) -> String {
+        if installed {
+            """
+            # Cadova Viewer
+
+            The headless viewer is installed at `"\(cadovaViewerPath)"`. Use it to verify every \
+            change as the Verification section describes.
+            """
+        } else {
+            """
+            # Cadova Viewer
+
+            The headless viewer is **not** installed on this Mac, so you can't render images. \
+            Verify with `ModelFileGenerator.evaluate` instead. If the user wants you to check the \
+            model visually, tell them to install Cadova Viewer 1.3.2 or later from \
+            https://github.com/tomasf/CadovaViewer/releases into /Applications.
+            """
+        }
     }
 
     static func stripFrontMatter(_ text: String) -> String {

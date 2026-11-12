@@ -14,6 +14,7 @@ DerivedData/
 WorkspaceTemplate/.build/
 WorkspaceTemplate/.swiftpm/
 WorkspaceTemplate/Models/
+WorkspaceTemplate/Renders/
 
 # Generated 3D models, wherever they end up (test fixtures are the exception)
 *.3mf

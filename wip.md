@@ -26,7 +26,9 @@ macOS app: chat with Claude (via headless Claude Code) about a 3D design → Cla
 - [ ] Settings: choose the Claude model (`ClaudeClient.model`), show per-turn duration/cost
 - [ ] Consider a long-lived `claude` process (`--input-format stream-json`) instead of one process per turn, to cut startup latency
 - [ ] Disk usage: each built design has a ~580 MB `.build`; share a build cache across designs or offer "clean" for inactive designs
-- [ ] Install Cadova Viewer 1.3.2+ so Claude can use the headless `cadova-viewer` CLI to render/measure its own output (the Cadova skill's verify loop)
+- [x] Install Cadova Viewer 1.3.2+ so Claude can use the headless `cadova-viewer` CLI to render/measure its own output (the Cadova skill's verify loop) — 1.3.3 installed; the app tells Claude whether it's present, renders go to `<design>/Renders/`, and app-owned workspace files (CLAUDE.md, .gitignore) refresh from the template on open
+- [ ] Chat: show Claude's verification renders (`Renders/*.png`) as thumbnails in the chat, so the user sees what Claude checked
+- [ ] Show a one-time hint in the app (not just to Claude) when Cadova Viewer isn't installed, with a link to the releases page
 - [ ] Viewer: frame the camera using the real view aspect ratio (currently fits to horizontal FOV only)
 - [ ] Viewer: part visibility toggles (hide context/visual parts), edge/wireframe overlay, section view
 - [ ] Viewer: large meshes are unindexed (3 vertices/triangle) for flat shading; fine so far, revisit if huge models get slow
@@ -35,3 +37,4 @@ macOS app: chat with Claude (via headless Claude Code) about a 3D design → Cla
 - [ ] Code panel showing the generated Swift source (read-only or editable)
 - [ ] Snapshot/version history per change (git in each workspace) with undo
 - [ ] Dimension/measurement overlays in the viewer
+- [ ] Designs: Ability to select and export selected files as a singular model

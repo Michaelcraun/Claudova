@@ -92,11 +92,21 @@ struct ClaudeClientTests {
             to: dir.appending(path: ".claude/skills/cadova/SKILL.md"), atomically: true, encoding: .utf8
         )
 
-        let prompt = ClaudeClient.systemPrompt(forWorkspaceAt: dir)
+        let prompt = ClaudeClient.systemPrompt(forWorkspaceAt: dir, viewerInstalled: true)
         #expect(prompt.hasPrefix("# Tool permissions in this session"))
+        #expect(prompt.contains("The headless viewer is installed"))
         #expect(prompt.contains("# Workspace rules"))
         #expect(prompt.contains("# Cadova\nBody"))
         #expect(!prompt.contains("name: cadova"))
+    }
+
+    @Test func viewerSectionReflectsInstallation() {
+        let installed = ClaudeClient.viewerSection(installed: true)
+        #expect(installed.contains("\"\(ClaudeClient.cadovaViewerPath)\""))
+        #expect(ClaudeClient.allowedCommands.contains("\"\(ClaudeClient.cadovaViewerPath)\""))
+        let missing = ClaudeClient.viewerSection(installed: false)
+        #expect(missing.contains("not** installed"))
+        #expect(missing.contains("ModelFileGenerator.evaluate"))
     }
 
     @Test func stripFrontMatterLeavesPlainTextAlone() {

@@ -29,7 +29,7 @@ targets:
         basedOnDependencyAnalysis: false
         script: |
           rsync -a --delete \
-            --exclude '.build' --exclude '.swiftpm' --exclude 'Models' --exclude '.DS_Store' \
+            --exclude '.build' --exclude '.swiftpm' --exclude 'Models' --exclude 'Renders' --exclude '.DS_Store' \
             "${SRCROOT}/WorkspaceTemplate/" \
             "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/WorkspaceTemplate/"
     settings:

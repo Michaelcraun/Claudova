@@ -36,6 +36,20 @@ struct WorkspaceManagementTests {
         #expect(manager.nextUntitledName() == "Untitled Design 3")
     }
 
+    @Test func refreshesOutdatedInstructionsFromTemplate() throws {
+        let (manager, root) = try makeTemporaryManager()
+        defer { try? FileManager.default.removeItem(at: root) }
+        let design = try manager.create(named: "Old")
+        #expect(manager.refreshAppOwnedFiles(in: design).isEmpty)  // fresh copy: nothing to do
+
+        let instructions = design.url.appending(path: "CLAUDE.md")
+        try "outdated".write(to: instructions, atomically: true, encoding: .utf8)
+        #expect(manager.refreshAppOwnedFiles(in: design) == ["CLAUDE.md"])
+        let template = try String(contentsOf: manager.templateURL.appending(path: "CLAUDE.md"), encoding: .utf8)
+        #expect(try String(contentsOf: instructions, encoding: .utf8) == template)
+        #expect(template.contains("Renders/"))
+    }
+
     @Test func transcriptRoundTrips() throws {
         let (manager, root) = try makeTemporaryManager()
         defer { try? FileManager.default.removeItem(at: root) }
